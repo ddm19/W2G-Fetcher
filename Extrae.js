@@ -1,7 +1,7 @@
 const fs = require('fs')
 const puppeteer = require('puppeteer')
 const url = "https://w2g.tv/2ywai0s3ggt1bsq7kp"
-
+const timecycle = 20;
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 let ACTUALTITLE;
@@ -69,7 +69,7 @@ async function run()
         });
         
         process.stdout.write('\033c');
-        await Timer(20);
+        await Timer(timecycle);
     }
 }
 
