@@ -1,0 +1,2 @@
+node Extrae.js
+pause
