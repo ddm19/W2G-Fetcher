@@ -1,6 +1,6 @@
 const fs = require('fs')
 const puppeteer = require('puppeteer')
-const url = "https://w2g.tv/2ywai0s3ggt1bsq7kp"
+const url = "https://w2g.tv/"
 const timecycle = 20;
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -40,9 +40,6 @@ async function run()
     while(true)
     {
         await page.screenshot({path: 'screenshot.png'});
-        //let titleelement = await page.$$('[class="w2g-chat-item-text w2g-url"]').toArray()
-        //let title = await (await titleelement[titleelement.length].getProperty('textContent')).jsonValue()+"                "
-        //let title = await (page.$('#movie_player > div.ytp-chrome-top.ytp-show-cards-title > div.ytp-title > div > a')).jsonValue()+" a"
         let title = await page.$$('.w2g-chat-item-text').then(async (elements) =>
         {
             let titletext;
@@ -55,8 +52,6 @@ async function run()
             
             return titletext;
         });
-
-        //let title = texts[texts.length]
 
         ACTUALTITLE = title;
 
