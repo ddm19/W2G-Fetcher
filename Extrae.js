@@ -86,7 +86,7 @@ async function Timer(seconds)
 async function main()
 {
     await run();
-    
+     
 }
 process.on('SIGINT', function() {
     process.stdout.write("\n Cerrando programa...");
